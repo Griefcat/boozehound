@@ -1,0 +1,6 @@
+<h1>Edit your cocktail</h1>
+
+<%= render partial: "shared/error_messages", locals: {my_object: @cocktail}%>
+
+<%= render partial: "form"%>
+<%= link_to "Go back to cocktail list", cocktails_path%>

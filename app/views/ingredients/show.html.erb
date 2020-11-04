@@ -1,0 +1,13 @@
+<h1>Here's ya ingredient</h1>
+
+Name: <%=@ingredient.name%><br>
+Ingredient Type: <%=@ingredient.ingredient_type%><br>
+
+Cocktails it is found in: <%if @ingredient.cocktails.empty?%><div>Not found in any cocktails</div>
+                            <%else%>
+                            <%@ingredient.cocktails.each do |cocktail|%>
+                            <%=link_to cocktail.name, cocktail_path(cocktail.id)%>
+                            <%end%>
+                            <%end%><br>
+
+<%= link_to "Back to Ingredients List", ingredients_path%>

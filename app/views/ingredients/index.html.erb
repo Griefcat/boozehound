@@ -1,0 +1,9 @@
+<h1>List o' Ingredients</h1>
+
+<ul>
+<% @ingredients.each do |ingredient|%>
+<li><%= link_to ingredient.name, ingredient_path(ingredient.id)%>
+<%=link_to ingredient.ingredient_type, ingredients_path(:sort => ingredient.ingredient_type)%> </li>
+<%end%>
+</ul>
+

@@ -1,0 +1,12 @@
+<h1>Here's ya cocktail</h1>
+
+Name: <%=@cocktail.name%><br>
+Alcohol Percentage: <%=@cocktail.alcohol_percentage%>%<br>
+Ingredients: <%@cocktail.ingredients.each do |ingredient|%>
+                <%=link_to ingredient.name, ingredient_path(ingredient.id)%>
+
+<%end%>
+
+<%= link_to "Delete this cocktail", cocktail_path(@cocktail.id), method: "delete"%>
+<%= link_to "Edit this cocktail", edit_cocktail_path(@cocktail.id)%>
+<%= link_to "Go back to cocktail list", cocktails_path%>

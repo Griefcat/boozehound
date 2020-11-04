@@ -1,0 +1,21 @@
+
+
+
+<%=form_for @cocktail do |f| %>
+<%=f.label :name %><br>
+<%=f.text_field :name %><br>
+<%=f.label :alcohol_percentage %><br>
+<%=f.text_field :alcohol_percentage %><br>
+<%=f.label :contains_alcohol%><br>
+<%=f.check_box :contains_alcohol%><br>
+
+
+<%=f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |b|%>
+<div>
+<%=b.label {b.check_box + b.text}%>
+</div>
+<%end%>
+<%=f.submit%>
+<%end%>
+
+
